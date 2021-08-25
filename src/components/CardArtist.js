@@ -1,11 +1,13 @@
 import React from 'react';
+import { Card } from '../style/style';
+
 
 function CardArtist ({ img, name }) {
   return (
-    <div>
+    <Card>
       <img src={img} alt="imagem"/>
       <p><b>Autor:</b> {name}</p>
-    </div>
+    </Card>
   );
 }
 

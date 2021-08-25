@@ -4,7 +4,7 @@ import CardPlaylist from '../components/CardPlaylist';
 import CardPodcast from '../components/CardPodcast';
 import CardAmostra from '../components/CardAmostra';
 import CardArtist from '../components/CardArtist';
-// import { Button } from '../style/style';
+import { Grid, Corpo } from '../style/style';
 
 
 function Inicio () {
@@ -19,10 +19,12 @@ function Inicio () {
     const albums = fetchChart.action.state.albums.data;
 
     return (
-      <>
-        <h1>Clone Deezer - jnpefo</h1>
-        <div>
+      <div>
+        <Corpo>
+          <h1>Clone Deezer - jnpefo</h1>
           <h3>Amostra</h3>
+        </Corpo>
+        <Grid>
           {faixas?.map((faixa) => (
               <CardAmostra
                 key={faixa.id}
@@ -32,9 +34,11 @@ function Inicio () {
                 link={faixa.preview}
               />
           ))}
-        </div>
-        <div>
-          <h3>PodCasts</h3>
+        </Grid>
+        <Corpo>
+        <h3>PodCasts</h3>
+        </Corpo>
+        <Grid>
           {podcasts?.map((podcast) => (
               <CardPodcast
                 key={podcast.id}
@@ -43,9 +47,11 @@ function Inicio () {
                 titulo={podcast.title}
               />
           ))}
-        </div>
-        <div>
-          <h3>Playlists</h3>
+        </Grid>
+        <Corpo>
+        <h3>Playlists</h3>
+        </Corpo>
+        <Grid>
           {playlists?.map((playlist) => (
               <CardPlaylist
                 key={playlist.id}
@@ -54,9 +60,11 @@ function Inicio () {
                 titulo={playlist.title}
               />
           ))}
-        </div>
-        <div>
-          <h3>Artistas</h3>
+        </Grid>
+        <Corpo>
+        <h3>Artistas</h3>
+        </Corpo>
+        <Grid>
           {artists?.map((artist) => (
               <CardArtist
                 key={artist.id}
@@ -64,9 +72,11 @@ function Inicio () {
                 name={artist.name}
               />
           ))}
-        </div>
-        <div>
-          <h3>Albuns</h3>
+        </Grid>
+        <Corpo>
+        <h3>Albuns</h3>
+        </Corpo>
+        <Grid>
           {albums?.map((album) => (
               <CardArtist
                 key={album.artist.id}
@@ -74,9 +84,11 @@ function Inicio () {
                 name={album.artist.name}
               />
           ))}
-        </div>
-        <div>
-          <h3>Cover</h3>
+        </Grid>
+        <Corpo>
+        <h3>Cover</h3>
+        </Corpo>
+        <Grid>
           {albums?.map((album) => (
               <CardArtist
                 key={album.id}
@@ -84,10 +96,8 @@ function Inicio () {
                 name={album.title}
               />
           ))}
-        </div>
-        {/* <Button>Normal</Button>
-        <Button>Themed</Button> */}
-      </>
+        </Grid>
+      </div>
     );
   }
 }
